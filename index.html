@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آوا اکسیر آسیا | پنل مدیریتی</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">آ</div>
+          <div><strong>آوا اکسیر آسیا</strong><span>پنل مدیریت تولید</span></div>
+        </div>
+        <nav class="nav">
+          <button class="nav-item active" data-section="dashboard"><span class="nav-icon">⌂</span>داشبورد</button>
+          <button class="nav-item" data-section="inventory"><span class="nav-icon">▦</span>انبار</button>
+          <button class="nav-item" data-section="products"><span class="nav-icon">◈</span>محصولات</button>
+          <button class="nav-item" data-section="production"><span class="nav-icon">♢</span>محاسبه تولید</button>
+          <button class="nav-item" data-section="prices"><span class="nav-icon">₽</span>قیمت‌ها</button>
+          <button class="nav-item" data-section="reports"><span class="nav-icon">▤</span>گزارش‌ها</button>
+          <button class="nav-item" data-section="users"><span class="nav-icon">♙</span>کاربران و نقش‌ها</button>
+        </nav>
+        <div class="sidebar-footer"><div class="help-icon">?</div><div><strong>نیاز به راهنمایی دارید؟</strong><span>راهنمای پنل مدیریت</span></div></div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="breadcrumbs"><span id="pageKicker">نمای کلی</span><b> / </b><strong id="pageTitle">داشبورد</strong></div>
+          <div class="top-actions"><button class="icon-button">⌕</button><button class="icon-button notification">♧<i></i></button><div class="profile"><div class="avatar">م</div><div><strong>مریم احمدی</strong><span>مدیر سیستم⌄</span></div></div></div>
+        </header>
+        <div class="content">
+          <section id="dashboard" class="page-section active">
+            <div class="page-heading"><div><h1>صبح بخیر، مریم <span>✦</span></h1><p>اینجا نمای کلی از وضعیت عملیات امروز را می‌بینید.</p></div><button class="primary" data-open="productionModal">+ شروع محاسبه تولید</button></div>
+            <div class="stats-grid">
+              <div class="stat-card"><div class="stat-top"><span>ارزش کل موجودی</span><span class="stat-icon purple">◉</span></div><strong>۲,۴۸۰,۰۰۰,۰۰۰ <small>ریال</small></strong><div class="trend up">↗ ۱۲.۵٪ <em>نسبت به ماه قبل</em></div></div>
+              <div class="stat-card"><div class="stat-top"><span>تعداد محصولات فعال</span><span class="stat-icon green">◈</span></div><strong>۲۴ <small>محصول</small></strong><div class="trend up">↗ ۳ محصول <em>این ماه</em></div></div>
+              <div class="stat-card"><div class="stat-top"><span>مواد در آستانه اتمام</span><span class="stat-icon orange">!</span></div><strong>۰۷ <small>قلم کالا</small></strong><div class="trend down">↘ ۲ قلم <em>نسبت به هفته قبل</em></div></div>
+              <div class="stat-card"><div class="stat-top"><span>تولید ماه جاری</span><span class="stat-icon blue">▣</span></div><strong>۸,۴۵۰ <small>کیلوگرم</small></strong><div class="trend up">↗ ۸.۲٪ <em>نسبت به ماه قبل</em></div></div>
+            </div>
+            <div class="dashboard-grid">
+              <div class="panel chart-panel"><div class="panel-header"><div><h2>ارزش موجودی انبار</h2><p>روند ارزش‌گذاری موجودی در شش ماه اخیر</p></div><select><option>۶ ماه اخیر</option></select></div><div class="chart"><div class="y-axis"><span>۳ میلیارد</span><span>۲ میلیارد</span><span>۱ میلیارد</span><span>۰</span></div><div class="bars"><div style="--h:45%"><i>فروردین</i></div><div style="--h:55%"><i>اردیبهشت</i></div><div style="--h:61%"><i>خرداد</i></div><div style="--h:51%"><i>تیر</i></div><div style="--h:72%"><i>مرداد</i></div><div class="current" style="--h:85%"><i>شهریور</i></div></div></div></div>
+              <div class="panel quick-panel"><div class="panel-header"><div><h2>دسترسی سریع</h2><p>عملیات پرکاربرد</p></div></div><div class="quick-grid"><button data-section-target="inventory"><b>▦</b>ثبت موجودی جدید</button><button data-section-target="products"><b>◈</b>افزودن محصول</button><button data-open="productionModal"><b>♢</b>محاسبه تولید</button><button data-section-target="reports"><b>▤</b>گزارش‌گیری</button></div></div>
+            </div>
+            <div class="panel"><div class="panel-header"><div><h2>هشدارهای موجودی</h2><p>اقلامی که نیاز به بررسی دارند</p></div><button class="text-button" data-section-target="inventory">مشاهده همه ←</button></div><div id="alertsTable"></div></div>
+          </section>
+          <section id="inventory" class="page-section"><div class="page-heading"><div><h1>مدیریت انبار</h1><p>موجودی مواد اولیه، ادوات بسته‌بندی و محصولات را مدیریت کنید.</p></div><button class="primary" data-open="inventoryModal">+ ثبت قلم جدید</button></div><div class="tabs"><button class="tab active" data-filter="all">همه موجودی</button><button class="tab" data-filter="raw">مواد اولیه</button><button class="tab" data-filter="pack">ادوات بسته‌بندی</button><button class="tab" data-filter="product">موجودی محصول</button></div><div class="panel"><div class="toolbar"><div class="search">⌕ <input id="inventorySearch" placeholder="جستجوی نام کالا..." /></div><span class="muted">آخرین بروزرسانی: امروز، ۱۰:۴۵</span></div><div id="inventoryTable"></div></div></section>
+          <section id="products" class="page-section"><div class="page-heading"><div><h1>محصولات و فرمول‌ها</h1><p>محصولات نهایی و فرمول تولید آن‌ها را مدیریت کنید.</p></div><button class="primary" data-open="productModal">+ افزودن محصول</button></div><div class="product-cards" id="productCards"></div></section>
+          <section id="production" class="page-section"><div class="page-heading"><div><h1>محاسبه تولید</h1><p>هزینه تولید، نیازمندی مواد و موجودی بسته‌بندی را بررسی کنید.</p></div><button class="primary" data-open="productionModal">+ محاسبه جدید</button></div><div class="panel production-empty"><div class="empty-icon">♢</div><h2>محاسبه تولید جدید</h2><p>محصول، حجم تولید و بسته‌بندی را انتخاب کنید تا محاسبات کامل انجام شود.</p><button class="primary" data-open="productionModal">شروع محاسبه</button></div></section>
+          <section id="prices" class="page-section"><div class="page-heading"><div><h1>قیمت مواد و بسته‌بندی</h1><p>تاریخچه قیمت‌ها را ثبت و تغییرات ماهانه را دنبال کنید.</p></div><button class="primary" data-open="priceModal">+ ثبت قیمت جدید</button></div><div class="panel"><div class="panel-header"><div><h2>آخرین قیمت‌های ثبت‌شده</h2><p>قیمت‌ها به ریال و بر اساس واحد خرید نمایش داده می‌شوند.</p></div></div><div id="pricesTable"></div></div></section>
+          <section id="reports" class="page-section"><div class="page-heading"><div><h1>گزارش‌ها</h1><p>گزارش‌های مالی، موجودی و تغییرات قیمت را مشاهده کنید.</p></div><button class="secondary">دریافت گزارش ←</button></div><div class="report-grid"><div class="report-card"><span class="report-icon purple">▤</span><h3>گزارش ارزش موجودی</h3><p>ارزش‌گذاری ماهانه کالاها</p><button>مشاهده گزارش ←</button></div><div class="report-card"><span class="report-icon orange">↗</span><h3>گزارش تغییرات قیمت</h3><p>مقایسه قیمت مواد اولیه</p><button>مشاهده گزارش ←</button></div><div class="report-card"><span class="report-icon green">▣</span><h3>گزارش تولید</h3><p>سوابق تولید و مصرف</p><button>مشاهده گزارش ←</button></div></div></section>
+          <section id="users" class="page-section"><div class="page-heading"><div><h1>کاربران و نقش‌ها</h1><p>سطح دسترسی اعضای تیم را مدیریت کنید.</p></div><button class="primary">+ افزودن کاربر</button></div><div class="panel"><div id="usersTable"></div></div></section>
+        </div>
+      </main>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="inventoryModal"><button class="modal-close">×</button><h2>ثبت قلم جدید در انبار</h2><p>اطلاعات کالا و موجودی اولیه را وارد کنید.</p><form id="inventoryForm"><label>نام کالا<input name="name" required placeholder="مثلاً اسانس لیمو"></label><label>دسته‌بندی<select name="category"><option value="raw">مواد اولیه</option><option value="pack">ادوات بسته‌بندی</option><option value="product">موجودی محصول</option></select></label><div class="form-row"><label>مقدار<input name="quantity" type="number" min="0" required></label><label>واحد<input name="unit" required placeholder="کیلوگرم"></label></div><label>قیمت واحد (ریال)<input name="price" type="number" min="0" required></label><button class="primary full">ذخیره قلم</button></form></div><div class="modal" id="productModal"><button class="modal-close">×</button><h2>افزودن محصول</h2><p>محصول نهایی و فرمول پایه آن را ثبت کنید.</p><form id="productForm"><label>نام محصول<input name="name" required placeholder="مایع دستشویی"></label><div class="form-row"><label>دسته محصول<input name="type" required placeholder="شوینده"></label><label>واحد پایه<input name="unit" value="کیلوگرم" required></label></div><label>توضیحات کوتاه<textarea name="description" placeholder="توضیح محصول"></textarea></label><button class="primary full">ذخیره محصول</button></form></div><div class="modal wide" id="productionModal"><button class="modal-close">×</button><h2>محاسبه تولید</h2><p>با انتخاب محصول، نیازمندی مواد و قیمت نهایی به‌صورت خودکار محاسبه می‌شود.</p><form id="productionForm"><div class="form-row three"><label>محصول<select name="product" id="productionProduct"></select></label><label>حجم تولید (کیلوگرم)<input name="amount" type="number" value="1000" min="1"></label><label>بسته‌بندی<select name="packaging"><option value="20">گالن ۲۰ لیتری</option><option value="5">گالن ۵ لیتری</option><option value="1">بطری ۱ لیتری</option></select></label></div><div class="form-row three"><label>اجرت تولید (%)<input name="labor" type="number" value="5" min="0"></label><label>سود (%)<input name="profit" type="number" value="15" min="0"></label><label>مالیات ارزش افزوده (%)<input name="tax" type="number" value="10" min="0"></label></div><div id="calculationResult" class="calculation-result"></div><button class="primary full">ثبت تولید و کسر موجودی</button></form></div><div class="modal" id="priceModal"><button class="modal-close">×</button><h2>ثبت قیمت جدید</h2><p>قیمت جدید را برای ثبت در تاریخچه وارد کنید.</p><form id="priceForm"><label>قلم کالا<select name="item" id="priceItem"></select></label><label>قیمت واحد (ریال)<input name="price" type="number" min="0" required></label><label>تاریخ ثبت<input name="date" type="date" required></label><button class="primary full">ثبت قیمت</button></form></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
