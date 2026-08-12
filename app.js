@@ -114,6 +114,14 @@
     if (b.closest(".report-card")) toast("گزارش آماده شد.");
   });
   $("#modalBackdrop").addEventListener("click", (e) => { if (e.target.id === "modalBackdrop") closeModal(); });
+  const menuToggle = $("#mobileMenuToggle");
+  const shell = $(".app-shell");
+  if (menuToggle) menuToggle.addEventListener("click", () => shell.classList.toggle("menu-open"));
+  document.addEventListener("click", (event) => {
+    if (!shell.classList.contains("menu-open")) return;
+    if (event.target.closest(".sidebar") || event.target.closest("#mobileMenuToggle")) return;
+    shell.classList.remove("menu-open");
+  });
   $("#inventorySearch").addEventListener("input", () => renderInventory());
   $("#productionForm").addEventListener("input", calculate);
   $("#inventoryForm").addEventListener("submit", (e) => { e.preventDefault(); const f = e.currentTarget, d = new FormData(f), id = Number(f.dataset.editId), old = state.inventory.find((x) => x.id === id); const item = { id: id || Date.now(), name: d.get("name").trim(), category: d.get("category"), quantity: Number(d.get("quantity")), unit: d.get("unit").trim(), price: Number(d.get("price")), min: old?.min || 0 }; state.inventory = id ? state.inventory.map((x) => x.id === id ? item : x) : [item, ...state.inventory]; save(); renderInventory(); renderPrices(); populateOptions(); closeModal(); toast(id ? "انبار ویرایش شد." : "قلم به انبار اضافه شد."); });
